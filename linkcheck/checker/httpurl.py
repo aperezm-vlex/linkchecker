@@ -246,7 +246,7 @@ class HttpUrl (internpaturl.InternPatternUrl, proxysupport.ProxySupport):
             log.debug(LOG_CHECK, "Redirected to %r", newurl)
             self.aliases.append(newurl)
             # XXX on redirect errors this is not printed
-            self.add_info(_("Redirected to `%(url)s'.") % {'url': newurl})
+            self.add_warning(_("Redirected to `%(url)s'.") % {'url': newurl})
             self.urlparts = strformat.url_unicode_split(newurl)
             self.build_url_parts()
             self.url_connection = response
